@@ -29,6 +29,10 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          secrets: |
+            WEB_PROD_URL
+            CONTENTFUL_SPACE_ID
+            CONTENTFUL_ACCESS_TOKEN
         env:
           WEB_PROD_URL: https://meguro.es
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
