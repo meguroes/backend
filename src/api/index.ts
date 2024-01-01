@@ -3,6 +3,6 @@ import post from "./post";
 
 const app = new Hono();
 
-app.route("/post", post);
+app.route("/posts", post);
 
 export default app;

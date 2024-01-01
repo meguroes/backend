@@ -7,7 +7,7 @@ app.get("/", async (c) => {
   const { limit, skip } = c.req.query();
   const post = await client.getEntries({
     content_type: "post",
-    order: "-fields.createdAt",
+    order: ["-fields.createdAt"],
     ...(limit && { limit }),
     ...(skip && { skip }),
   });

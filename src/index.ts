@@ -25,7 +25,15 @@ app.use("/api/*", async (c, next) => {
   const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = env<Env>(c);
   const contentful: Contentful = {
     getEntries: async (queryObject) => {
-      const query = new URLSearchParams(queryObject).toString();
+      const searchParams = new URLSearchParams();
+      Object.entries(queryObject).forEach(([key, value]) => {
+        if (!Array.isArray(value)) {
+          searchParams.set(key, value);
+        } else {
+          value.forEach((v) => searchParams.append(key, v));
+        }
+      });
+      const query = searchParams.toString();
       const res = await fetch(
         `https://cdn.contentful.com/spaces/${CONTENTFUL_SPACE_ID}/entries?${query}`,
         {

@@ -27,7 +27,7 @@ npm run deploy
 
 ## Release Flow
 
-Actions の [Continuous Delivery ワークフロー](https://github.com/meguroes/next.meguro.es/actions/workflows/continuous_delivery.yaml) から、 `Run Workflow` ボタンを押下します。
+Actions の [Continuous Delivery ワークフロー](https://github.com/meguroes/backend/actions/workflows/continuous_delivery.yaml) から、 `Run Workflow` ボタンを押下します。
 
 ![スクリーンショット 2023-12-28 午後7 41 04](https://github.com/meguroes/next.meguro.es/assets/38882716/d8c5fc73-9dd7-4323-8714-54621267cde0)
 
