@@ -2,7 +2,7 @@
 
 ## Setup
 
-wranger で `wranger.toml` を生成し、以下を追記してください。
+プロジェクトのルートに `.den.vars` を作成し、以下を記述してください。
 
 ```toml
 [vars]
