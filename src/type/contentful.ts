@@ -1,5 +1,5 @@
 export type Contentful = {
-  getEntries: (queryObject: {
+  getEntries: (_queryObject: {
     content_type?: string;
     order?: string[];
     limit?: string;
