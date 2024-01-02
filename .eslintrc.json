@@ -1,0 +1,4 @@
+{
+  "extends": ["eslint:recommended", "@hono/eslint-config", "prettier"],
+  "parser": "@typescript-eslint/parser"
+}
