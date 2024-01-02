@@ -1,14 +1,27 @@
 {
   "scripts": {
+    "prepare": "husky install",
     "dev": "wrangler dev src/index.ts --port 5432",
-    "deploy": "wrangler deploy --minify src/index.ts"
+    "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "check-types": "tsc --noEmit",
+    "lint-staged": "lint-staged",
+    "precommit": "run-s lint-staged check-types"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged --allow-empty"
+    }
   },
   "dependencies": {
     "hono": "^3.11.12"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20231218.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "npm-run-all2": "^6.1.1",
     "prettier": "^3.1.1",
+    "typescript": "^5.3.3",
     "wrangler": "^3.22.0"
   },
   "volta": {

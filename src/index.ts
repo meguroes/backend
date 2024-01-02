@@ -40,7 +40,7 @@ app.use("/api/*", async (c, next) => {
           headers: {
             Authorization: `Bearer ${CONTENTFUL_ACCESS_TOKEN}`,
           },
-        }
+        },
       );
       const data = await res.json();
       return data;
