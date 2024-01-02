@@ -15,13 +15,11 @@ CONTENTFUL_ACCESS_TOKEN=XXXX
 
 ## Quick Start
 
+以下で開発サーバーが起動します。URLは <http://localhost:5432> です。
+
 ```
 npm ci .
 npm run dev
-```
-
-```
-npm run deploy
 ```
 
 ## Release Flow
