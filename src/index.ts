@@ -11,10 +11,15 @@ const app = new Hono();
 app.use("*", secureHeaders());
 
 app.use("/api/*", async (c, next) => {
-  const { WEB_LOCAL_URL, WEB_PROD_URL } = env<Env>(c);
+  const { WEB_LOCAL_URL, WEB_PROD_URL, WEB_STG_URL_SUFFIX } = env<Env>(c);
   /** @see https://github.com/honojs/hono/issues/895#issuecomment-1431012601 */
   const middleware = cors({
-    origin: [WEB_LOCAL_URL || "", WEB_PROD_URL],
+    origin: (origin) =>
+      origin === WEB_LOCAL_URL ||
+      origin === WEB_PROD_URL ||
+      (WEB_STG_URL_SUFFIX && origin.endsWith(WEB_STG_URL_SUFFIX))
+        ? origin
+        : null,
     allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     allowHeaders: ["Content-Type", "Authorization"],
   });

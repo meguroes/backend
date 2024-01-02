@@ -7,6 +7,7 @@
 ```
 WEB_LOCAL_URL=http://localhost:3000
 WEB_PROD_URL=https://meguro.es
+WEB_STG_URL_SUFFIX=.meguro-es.pages.dev
 CONTENTFUL_SPACE_ID=XXXX
 CONTENTFUL_ACCESS_TOKEN=XXXX
 ```
