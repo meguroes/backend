@@ -2,7 +2,7 @@
 
 ## Setup
 
-プロジェクトのルートに `.den.vars` を作成し、以下を記述してください。
+プロジェクトのルートに `.dev.vars` を作成し、以下を記述してください。
 
 ```
 WEB_LOCAL_URL=http://localhost:3000
